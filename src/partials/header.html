@@ -1,0 +1,165 @@
+<!-- main header section -->
+<header class="bg-black z-30 w-full relative">
+    <div class="container mx-auto flex flex-wrap justify-between px-4 sm:px-6 md:px-8 lg:px-10">
+        <!-- Logo and Tagline -->
+        <a href="../index.html" class="text-white font-JosefinSans flex mb-3 mt-3">
+            <div class="text-sm text-left">
+                <strong class="uppercase text-2xl">Ecomexia</strong><br />
+                <span class="text-base text-gray-300">Ecom Deals</span>
+            </div>
+        </a>
+
+        <!-- Hamburger Menu for Mobile -->
+        <div class="block md:hidden">
+            <button id="hamburger" class="text-white focus:outline-none">
+                <i class="fa-solid fa-bars fa-lg"></i>
+            </button>
+        </div>
+
+        <!-- Navigation Menu -->
+        <nav
+            class=" md:flex flex-grow items-center justify-center space-x-4 lg:space-x-6 xl:space-x-3 sm:space-x-3 s:space-x-0">
+            <ul class="flex text-white font-JosefinSans space-x-4 lg:space-x-6 xl:space-x-3 sm:space-x-3 s:space-x-0">
+                <li>
+                    <a href="#" class="hover:text-gray-300 2xl:block lg:block md:block sm:hidden xl:hidden s:hidden"
+                        id="all-departments-link">
+                        <i class="fa-solid fa-bars"></i> All Departments
+                    </a>
+                </li>
+                <li>
+                    <a href="../index.html" class="hover:text-gray-300">Home</a>
+                </li>
+                <li class="relative group">
+                    <a href="#" class="hover:text-gray-300 pages-toggle">Pages</a>
+                    <ul
+                        class="absolute hidden text-black text-center -ml-16 mt-2 p-4 space-y-2 bg-white group-hover:block pages-menu">
+                        <li><a href="../about.html" class="block px-14 py-2 hover:bg-gray-200">About Us</a></li>
+                        <li><a href="../Faqs.html" class="block px-14 py-2 hover:bg-gray-200">FAQ</a></li>
+                        <li><a href="../404.html" class="block px-14 py-2 hover:bg-gray-200">404</a></li>
+                    </ul>
+                </li>
+                <li class="relative group">
+                    <a href="#" class="hover:text-gray-300 shop-toggle">Shop</a>
+                    <div
+                        class="flex hidden absolute bg-white text-black -ml-36 mt-2 p-4 space-x-3 shop-menu group-hover:flex">
+                        <ul class="flex flex-col space-y-2">
+                            <li><strong class="font-bold">Fashion</strong></li>
+                            <li><a href="../men.html" class="block px-4 py-2 hover:bg-gray-200">Men</a></li>
+                            <li><a href="../women.html" class="block px-4 py-2 hover:bg-gray-200">Women</a></li>
+                            <li><a href="../kids.html" class="block px-4 py-2 hover:bg-gray-200">Kids</a></li>
+                        </ul>
+                        <ul class="flex flex-col space-y-2 mt-4">
+                            <li><strong class="font-bold">Furniture</strong></li>
+                            <li><a href="../living.html" class="block px-4 py-2 hover:bg-gray-200">Living Room</a></li>
+                            <li><a href="../kitchen.html" class="block px-4 py-2 hover:bg-gray-200">Kitchen</a></li>
+                            <li><a href="../office.html" class="block px-4 py-2 hover:bg-gray-200">Office</a></li>
+                        </ul>
+                        <ul class="flex flex-col space-y-2 mt-4">
+                            <li><strong class="font-bold">Sports Shoes</strong></li>
+                            <li><a href="../walkingshoes.html" class="block px-4 py-2 hover:bg-gray-200">Walking</a>
+                            </li>
+                            <li><a href="../runningshoes.html" class="block px-4 py-2 hover:bg-gray-200">Running</a>
+                            </li>
+                            <li><a href="../sneakers.html" class="block px-4 py-2 hover:bg-gray-200">Sneakers</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="relative group">
+                    <a href="#" class="hover:text-gray-300 electronics-link">Electronics</a>
+                    <div
+                        class="flex hidden absolute bg-white -ml-20 text-black mt-2 p-4 space-y-4 electronics-submenu group-hover:flex">
+                        <ul class="flex flex-col space-y-2">
+                            <li><strong class="font-bold">Mobiles</strong></li>
+                            <li><a href="../apple.html" class="block px-4 py-2 hover:bg-gray-200">Apple</a></li>
+                            <li><a href="../samsung.html" class="block px-4 py-2 hover:bg-gray-200">Samsung Galaxy</a>
+                            </li>
+                            <li><a href="../Xiaomi.html" class="block px-4 py-2 hover:bg-gray-200">Xiaomi</a></li>
+                            <li><a href="../blackberry.html" class="block px-4 py-2 hover:bg-gray-200">BlackBerry</a>
+                            </li>
+                            <li><a href="../lenovo.html" class="block px-4 py-2 hover:bg-gray-200">Lenovo</a></li>
+                        </ul>
+                        <ul class="flex flex-col space-y-2 mt-4">
+                            <li><strong class="font-bold">Camera</strong></li>
+                            <li><a href="../lanses.html" class="block px-4 py-2 hover:bg-gray-200">Lenses</a></li>
+                            <li><a href="../dslr.html" class="block px-4 py-2 hover:bg-gray-200">DSLR</a></li>
+                            <li><a href="../tripods.html" class="block px-4 py-2 hover:bg-gray-200">Tripods</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="../Contact.html" class="hover:text-gray-300">Contact Us</a>
+                </li>
+            </ul>
+            <!-- Sign In and Sign Up Links -->
+            <div class="flex items-end space-x-4 text-white">
+                <a href="../signin.html" class="hover:text-gray-300">
+                    <i class="fa-solid fa-sign-in-alt"></i> Sign In
+                </a>
+                <a href="../signup.html" class="hover:text-gray-300">
+                    <i class="fa-solid fa-user-plus"></i> Sign Up
+                </a>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const pagesToggle = document.querySelector('.pages-toggle');
+        const shopToggle = document.querySelector('.shop-toggle');
+        const electronicsLink = document.querySelector('.electronics-link');
+        const pagesMenu = document.querySelector('.pages-menu');
+        const shopMenu = document.querySelector('.shop-menu');
+        const electronicsSubmenu = document.querySelector('.electronics-submenu');
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.querySelector('nav');
+
+        // Toggle Pages menu on click
+        pagesToggle.addEventListener('click', function (event) {
+            event.preventDefault();
+            pagesMenu.classList.toggle('hidden');
+            shopMenu.classList.add('hidden');
+            electronicsSubmenu.classList.add('hidden');
+        });
+
+        // Toggle Shop menu on click
+        shopToggle.addEventListener('click', function (event) {
+            event.preventDefault();
+            shopMenu.classList.toggle('hidden');
+            pagesMenu.classList.add('hidden');
+            electronicsSubmenu.classList.add('hidden');
+        });
+
+        // Toggle Electronics submenu on click
+        electronicsLink.addEventListener('click', function (event) {
+            event.preventDefault();
+            electronicsSubmenu.classList.toggle('hidden');
+            pagesMenu.classList.add('hidden');
+            shopMenu.classList.add('hidden');
+        });
+
+        // Close menus when clicking outside
+        document.addEventListener('click', function (event) {
+            const isClickInsidePages = pagesMenu.contains(event.target) || pagesToggle.contains(event.target);
+            const isClickInsideShop = shopMenu.contains(event.target) || shopToggle.contains(event.target);
+            const isClickInsideElectronics = electronicsSubmenu.contains(event.target) || electronicsLink.contains(event.target);
+
+            if (!isClickInsidePages) {
+                pagesMenu.classList.add('hidden');
+            }
+
+            if (!isClickInsideShop) {
+                shopMenu.classList.add('hidden');
+            }
+
+            if (!isClickInsideElectronics) {
+                electronicsSubmenu.classList.add('hidden');
+            }
+        });
+
+        // Toggle navbar on mobile
+        hamburger.addEventListener('click', function () {
+            navMenu.classList.toggle('hidden');
+        });
+    });
+</script>

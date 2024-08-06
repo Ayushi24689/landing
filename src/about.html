@@ -1,0 +1,190 @@
+{{> mini-header}}
+{{>header}}
+
+   <head>
+    {{> link}}
+   </head>
+<body>
+
+    <section class="relative bg-black bg-opacity-50 font-JosefinSans text-white">
+        <!-- Overlay Effect -->
+        <div class="absolute inset-0 bg-gradient-to-r from-black via-transparent to-black opacity-70"></div>
+        <!-- Background Image -->
+        <div class="absolute inset-0 overflow-hidden">
+            <img src="assets/image/living-rooms-interior-design-indoors-gray-wallpaper.jpg  " alt="Hero Image"
+                class="object-cover w-full h-full opacity-40">
+        </div>
+        <!-- Content -->
+        <div class="relative z-10 flex flex-col  items-center justify-center min-h-screen py-16 text-center px-4">
+            <h1 class="text-5xl font-extrabold mb-6 leading-tight text-shadow-lg">About Us</h1>
+            <p class="text-xl max-w-3xl mx-auto mb-8 leading-relaxed text-shadow-md">We are a passionate team dedicated
+                to
+                delivering exceptional products and services to our customers. Discover our commitment to excellence and
+                innovation.</p>
+            <a href="Contact.html"
+                class="inline-block px-8 py-3 bg-gradient-to-r from-slate-500 to-slate-800 text-white font-semibold text-lg rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">Contact
+                Us</a>
+        </div>
+    </section>
+
+
+    <!-- Team Section -->
+    <section class="py-16 bg-gray-100 font-JosefinSans">
+        <div class="container mx-auto text-center">
+            <h2 class="text-4xl font-extrabold mb-12 text-gray-800">Meet Our Team</h2>
+            <div class="flex flex-wrap justify-center gap-12">
+                <!-- Team Member -->
+                <div
+                    class="bg-gradient-to-br from-white to-gray-200 rounded-lg shadow-xl p-6 max-w-xs transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+                    <img src="assets/image/i-61.webp" alt="Team Member"
+                        class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gray-200 hover:border-gray-400 transition-colors duration-300">
+                    <h3 class="text-2xl font-bold mb-2 text-gray-800">John Doe</h3>
+                    <p class="text-gray-600">CEO & Founder</p>
+                </div>
+                <!-- Team Member -->
+                <div
+                    class="bg-gradient-to-br from-white to-gray-200 rounded-lg shadow-xl p-6 max-w-xs transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+                    <img src="assets/image/i-64.webp" alt="Team Member"
+                        class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gray-200 hover:border-gray-400 transition-colors duration-300">
+                    <h3 class="text-2xl font-bold mb-2 text-gray-800">Jane Smith</h3>
+                    <p class="text-gray-600">Chief Operating Officer</p>
+                </div>
+                <!-- Team Member -->
+                <div
+                    class="bg-gradient-to-br from-white to-gray-200 rounded-lg shadow-xl p-6 max-w-xs transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl">
+                    <img src="assets/image/i-63.webp" alt="Team Member"
+                        class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-gray-200 hover:border-gray-400 transition-colors duration-300">
+                    <h3 class="text-2xl font-bold mb-2 text-gray-800">Alice Johnson</h3>
+                    <p class="text-gray-600">Lead Designer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Company Values Section -->
+    <section class="py-16 bg-gray-200 font-JosefinSans">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-8">Our Values</h2>
+            <p class="text-lg max-w-2xl mx-auto mb-8">We are committed to innovation, excellence, and customer
+                satisfaction.
+                Our core values guide us in everything we do and drive us to make a positive impact.</p>
+            <div class="flex flex-wrap justify-center gap-8">
+                <!-- Value Card -->
+                <div class="bg-white rounded-lg shadow-lg p-6 max-w-xs">
+                    <h3 class="text-xl font-semibold mb-4">Innovation</h3>
+                    <p class="text-gray-600">We strive to push the boundaries of what’s possible and deliver
+                        cutting-edge
+                        solutions.</p>
+                </div>
+                <!-- Value Card -->
+                <div class="bg-white rounded-lg shadow-lg p-6 max-w-xs">
+                    <h3 class="text-xl font-semibold mb-4">Excellence</h3>
+                    <p class="text-gray-600">We are committed to delivering top-quality products and services that
+                        exceed
+                        expectations.</p>
+                </div>
+                <!-- Value Card -->
+                <div class="bg-white rounded-lg shadow-lg p-6 max-w-xs">
+                    <h3 class="text-xl font-semibold mb-4">Customer Satisfaction</h3>
+                    <p class="text-gray-600">Our customers are at the heart of everything we do, and we work tirelessly
+                        to
+                        ensure their satisfaction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.getElementById('electronics-link').addEventListener('click', function (event) {
+            event.preventDefault();
+            const submenu = document.getElementById('electronics-submenu');
+            submenu.classList.toggle('hidden');
+        });
+
+        // Optional: Hide the submenu when clicking outside
+        document.addEventListener('click', function (event) {
+            const submenu = document.getElementById('electronics-submenu');
+            const target = event.target;
+            if (!submenu.contains(target) && target.id !== 'electronics-link') {
+                submenu.classList.add('hidden');
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const pagesToggle = document.getElementById('pages-toggle');
+            const shopToggle = document.getElementById('shop-toggle');
+            const pagesMenu = document.getElementById('pages-menu');
+            const shopMenu = document.getElementById('shop-menu');
+
+            pagesToggle.addEventListener('click', function (event) {
+                event.preventDefault();
+                pagesMenu.classList.toggle('hidden');
+                shopMenu.classList.add('hidden'); // Close shop menu if open
+            });
+
+            shopToggle.addEventListener('click', function (event) {
+                event.preventDefault();
+                shopMenu.classList.toggle('hidden');
+                pagesMenu.classList.add('hidden'); // Close pages menu if open
+            });
+
+            // Optional: Click outside to close menus
+            document.addEventListener('click', function (event) {
+                const isClickInsidePages = pagesMenu.contains(event.target) || pagesToggle.contains(event.target);
+                const isClickInsideShop = shopMenu.contains(event.target) || shopToggle.contains(event.target);
+
+                if (!isClickInsidePages) {
+                    pagesMenu.classList.add('hidden');
+                }
+
+                if (!isClickInsideShop) {
+                    shopMenu.classList.add('hidden');
+                }
+            });
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            const slider = document.getElementById('slider');
+            const slides = slider.children;
+            const totalSlides = slides.length;
+            let currentSlide = 0;
+
+            function updateSlider() {
+                const offset = -currentSlide * 100;
+                slider.style.transform = `translateX(${offset}%)`;
+            }
+
+            document.getElementById('prev').addEventListener('click', () => {
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                updateSlider();
+            });
+
+            document.getElementById('next').addEventListener('click', () => {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                updateSlider();
+            });
+
+            // Initialize the slider position
+            updateSlider();
+        });
+        document.addEventListener("DOMContentLoaded", () => {
+            function counter(id, start, end, duration) {
+                let obj = document.getElementById(id),
+                    current = start,
+                    range = end - start,
+                    increment = end > start ? 1 : -1,
+                    step = Math.abs(Math.floor(duration / range)),
+                    timer = setInterval(() => {
+                        current += increment;
+                        obj.textContent = current;
+                        if (current == end) {
+                            clearInterval(timer);
+                        }
+                    }, step);
+            }
+            counter("count1", 0, 10, 3000);
+            counter("count2", 0, 50, 2500);
+            counter("count3", 0, 100, 3000);
+        });
+    </script>
+
+    {{> footer}}
