@@ -4,80 +4,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add to Cart</title>
+    <title>Buy Now</title>
     {{> link}}
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <script defer src="script.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.0.0/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: #f0f4f8;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .card input,
+        .card select {
+            border-color: #d1d5db;
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 1rem;
+        }
+
+        .card input:focus,
+        .card select:focus {
+            border-color: #4f46e5;
+            outline: none;
+        }
+    </style>
 </head>
 
-<body class="bg-gray-100">
+<body class="">
 
-    <div class="max-w-4xl mx-auto p-8">
-        <h1 class="text-3xl font-bold mb-6">Add to Cart</h1>
+    <div class="container mx-auto max-w-lg">
 
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-            <div class="flex items-center mb-6">
-                <img src="https://via.placeholder.com/150" alt="Product Image"
-                    class="w-24 h-24 object-cover rounded-md">
-                <div class="ml-6">
-                    <h2 class="text-xl font-semibold">Product Name</h2>
-                    <p class="text-gray-600 mt-1">$49.99</p>
+        <!-- Shipping Method Details -->
+        <div class="card">
+            <div class="section-title">Shipping Method</div>
+            <form>
+                <div class="space-y-">
+                    <div>
+                        <label for="shipping-method" class="block text-sm font-medium text-gray-700">Select Shipping
+                            Method</label>
+                        <select id="shipping-method" name="shipping-method" class="block w-full mt-2">
+                            <option>Standard Shipping - 5-7 Days</option>
+                            <option>Express Shipping - 2-3 Days</option>
+                            <option>Overnight Shipping - 1 Day</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="address" class="block text-sm font-medium text-gray-700">Shipping Address</label>
+                        <input type="text" id="address" name="address" placeholder="123 Main St, City, State, ZIP"
+                            class="block w-full mt-2">
+                    </div>
                 </div>
-            </div>
-
-            <form id="cart-form" class="space-y-4">
-                <div class="flex items-center space-x-4">
-                    <button type="button" id="decrement"
-                        class="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg">-</button>
-                    <input type="number" id="quantity" name="quantity" value="1" min="1"
-                        class="w-20 text-center border border-gray-300 rounded-lg" readonly>
-                    <button type="button" id="increment"
-                        class="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg">+</button>
-                </div>
-
-                <div class="flex justify-between items-center mt-4">
-                    <span class="text-lg font-semibold">Total:</span>
-                    <span id="total-price" class="text-lg font-bold">$49.99</span>
-                </div>
-
-                <button type="submit"
-                    class="w-full bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Add
-                    to Cart</button>
             </form>
         </div>
+
+        <!-- Customer Information -->
+        <div class="card">
+            <div class="section-title">Customer Information</div>
+            <form>
+                <div class="space-y-2">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" class="block w-full mt-2">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="you@example.com"
+                            class="block w-full mt-2">
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890"
+                            class="block w-full mt-2">
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Payment Details -->
+        <div class="card">
+            <div class="section-title">Payment Details</div>
+            <form>
+                <div class="space-y-2">
+                    <div>
+                        <label for="card-number" class="block text-sm font-medium text-gray-700">Card Number</label>
+                        <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9012 3456"
+                            class="block w-full mt-2">
+                    </div>
+                    <div class="flex space-x-6">
+                        <div class="w-1/2">
+                            <label for="expiry-date" class="block text-sm font-medium text-gray-700">Expiry Date</label>
+                            <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY"
+                                class="block w-full mt-2">
+                        </div>
+                        <div class="w-1/2">
+                            <label for="cvv" class="block text-sm font-medium text-gray-700">CVV</label>
+                            <input type="text" id="cvv" name="cvv" placeholder="123" class="block w-full mt-2">
+                        </div>
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-blue-600 text-white py-3 rounded-md shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">Complete
+                        Purchase</button>
+                </div>
+            </form>
+        </div>
+
     </div>
 
 </body>
 
 </html>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-            const quantityInput = document.getElementById('quantity');
-            const totalPriceElement = document.getElementById('total-price');
-            const incrementButton = document.getElementById('increment');
-            const decrementButton = document.getElementById('decrement');
-
-            const pricePerUnit = 49.99;
-
-            function updateTotalPrice() {
-                const quantity = parseInt(quantityInput.value, 10);
-                const totalPrice = (quantity * pricePerUnit).toFixed(2);
-                totalPriceElement.textContent = `$${totalPrice}`;
-            }
-
-            incrementButton.addEventListener('click', function () {
-                quantityInput.value = parseInt(quantityInput.value, 10) + 1;
-                updateTotalPrice();
-            });
-
-            decrementButton.addEventListener('click', function () {
-                const currentQuantity = parseInt(quantityInput.value, 10);
-                if (currentQuantity > 1) {
-                    quantityInput.value = currentQuantity - 1;
-                    updateTotalPrice();
-                }
-            });
-        });
-
-</script>
