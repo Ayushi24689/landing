@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 p-6 font-sans">
+
+    <!-- Shopping Cart Header -->
+    <header class="flex items-center justify-between mb-8">
+        <h1 class="text-3xl font-bold text-gray-800">Shopping Cart</h1>
+        <button class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-500">
+            Continue Shopping
+        </button>
+    </header>
+
+    <!-- Cart Items Section -->
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Cart Item -->
+        <div
+            class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300 ease-in-out">
+            <div class="flex items-center space-x-4">
+                <img src="https://via.placeholder.com/80" alt="Product Image" class="w-20 h-20 rounded-md">
+                <div>
+                    <h2 class="text-xl font-semibold text-gray-800">Product Name</h2>
+                    <p class="text-gray-500">Product description goes here</p>
+                    <div class="flex items-center mt-2 space-x-2">
+                        <button class="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-400 decrement">-</button>
+                        <span class="text-gray-800 quantity">1</span>
+                        <button
+                            class="bg-green-500 text-white px-3 py-1 rounded-md hover:bg-green-400 increment">+</button>
+                    </div>
+                </div>
+                <div class="ml-auto">
+                    <p class="text-lg font-bold text-gray-800 price">$99.99</p>
+                    <button class="text-red-500 hover:text-red-600 mt-2 remove">Remove</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Another Cart Item -->
+        <div
+            class="bg-white p-4 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300 ease-in-out">
+            <div class="flex items-center space-x-4">
+                <img src="https://via.placeholder.com/80" alt="Product Image" class="w-20 h-20 rounded-md">
+                <div>
+                    <h2 class="text-xl font-semibold text-gray-800">Another Product</h2>
+                    <p class="text-gray-500">Product description goes here</p>
+                    <div class="flex items-center mt-2 space-x-2">
+                        <button class="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-400 decrement">-</button>
+                        <span class="text-gray-800 quantity">1</span>
+                        <button
+                            class="bg-green-500 text-white px-3 py-1 rounded-md hover:bg-green-400 increment">+</button>
+                    </div>
+                </div>
+                <div class="ml-auto">
+                    <p class="text-lg font-bold text-gray-800 price">$149.99</p>
+                    <button class="text-red-500 hover:text-red-600 mt-2 remove">Remove</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- More items can be added here -->
+    </section>
+
+    <!-- Cart Summary Section -->
+    <section class="bg-white p-6 mt-8 rounded-lg shadow-lg lg:mt-0 lg:col-span-2">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">Cart Summary</h2>
+        <div class="flex justify-between items-center mb-2">
+            <p class="text-gray-500">Subtotal</p>
+            <p class="text-gray-800 font-semibold subtotal">$249.98</p>
+        </div>
+        <div class="flex justify-between items-center mb-2">
+            <p class="text-gray-500">Shipping</p>
+            <p class="text-gray-800 font-semibold">Free</p>
+        </div>
+        <div class="flex justify-between items-center mb-4">
+            <p class="text-gray-500">Tax</p>
+            <p class="text-gray-800 font-semibold">$20.00</p>
+        </div>
+        <div class="flex justify-between items-center mb-6">
+            <p class="text-gray-800 text-lg font-bold">Total</p>
+            <p class="text-gray-800 text-lg font-bold total">$269.98</p>
+        </div>
+        <button class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-500">
+            Proceed to Checkout
+        </button>
+    </section>
+
+    <script>
+        // JavaScript to handle increment, decrement, and remove functionality
+        document.querySelectorAll('.increment').forEach(button => {
+            button.addEventListener('click', function () {
+                const quantityElem = this.previousElementSibling;
+                let quantity = parseInt(quantityElem.textContent);
+                quantityElem.textContent = quantity + 1;
+                updatePrice(this, quantity + 1);
+            });
+        });
+
+        document.querySelectorAll('.decrement').forEach(button => {
+            button.addEventListener('click', function () {
+                const quantityElem = this.nextElementSibling;
+                let quantity = parseInt(quantityElem.textContent);
+                if (quantity > 1) {
+                    quantityElem.textContent = quantity - 1;
+                    updatePrice(this, quantity - 1);
+                }
+            });
+        });
+
+        document.querySelectorAll('.remove').forEach(button => {
+            button.addEventListener('click', function () {
+                const cartItem = this.closest('.bg-white');
+                cartItem.remove();
+                updateSummary();
+            });
+        });
+
+        function updatePrice(button, quantity) {
+            const priceElem = button.closest('.flex').querySelector('.price');
+            const pricePerItem = parseFloat(priceElem.getAttribute('data-price-per-item'));
+            priceElem.textContent = `$${(pricePerItem * quantity).toFixed(2)}`;
+            updateSummary();
+        }
+
+        function updateSummary() {
+            let subtotal = 0;
+            document.querySelectorAll('.price').forEach(priceElem => {
+                subtotal += parseFloat(priceElem.textContent.replace('$', ''));
+            });
+            document.querySelector('.subtotal').textContent = `$${subtotal.toFixed(2)}`;
+            const tax = 20.00; // Assuming a fixed tax for simplicity
+            const total = subtotal + tax;
+            document.querySelector('.total').textContent = `$${total.toFixed(2)}`;
+        }
+
+        // Initialize prices on page load
+        document.querySelectorAll('.price').forEach(priceElem => {
+            const price = parseFloat(priceElem.textContent.replace('$', ''));
+            priceElem.setAttribute('data-price-per-item', price);
+        });
+
+        updateSummary(); // Update summary on page load
+    </script>
+
+</body>
+
+</html>

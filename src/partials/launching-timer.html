@@ -1,0 +1,73 @@
+<div class="relative bg-gray-100 py-16 mt-8">
+    <!-- Diagonal Split Background -->
+    <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-700 transform -skew-y-6 z-0"></div>
+
+    <div class="relative z-10 max-w-5xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden">
+        <div class="flex flex-col lg:flex-row items-center">
+            <!-- Countdown Section -->
+            <div class="w-full lg:w-1/2 p-8 text-center lg:text-left">
+                <h2 class="text-3xl font-extrabold text-blue-700 mb-4">iPhone 13 Blue Launch</h2>
+                <p class="text-lg text-gray-700 mb-6">Get ready for the big reveal!</p>
+                <div id="countdown" class="text-2xl font-semibold text-blue-900">
+                    <div class="flex flex-wrap justify-center lg:justify-start space-x-4">
+                        <div class="text-center">
+                            <span id="days" class="block text-blue-500">00</span>
+                            <span class="text-sm">Days</span>
+                        </div>
+                        <div class="text-center">
+                            <span id="hours" class="block text-blue-500">00</span>
+                            <span class="text-sm">Hours</span>
+                        </div>
+                        <div class="text-center">
+                            <span id="minutes" class="block text-blue-500">00</span>
+                            <span class="text-sm">Minutes</span>
+                        </div>
+                        <div class="text-center">
+                            <span id="seconds" class="block text-blue-500">00</span>
+                            <span class="text-sm">Seconds</span>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <a href="../shopping.html"
+                    class="block border-2 border-double capitalize px-8 bg-blue-950 text-white py-3 mx-auto lg:mx-0">buy
+                    now</a>
+            </div>
+
+            <!-- Image Section -->
+            <div class="w-full lg:w-1/2 flex items-center justify-center p-8">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-blue-300 rounded-full blur-3xl opacity-50"></div>
+                    <img src="../assets/image/i-430.webp" alt="iPhone 13 Blue"
+                        class="relative z-10 rounded-lg shadow-lg w-full h-auto max-w-sm lg:max-w-full">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Countdown timer script
+    const launchDate = new Date("Sep 24, 2024 12:00:00").getTime();
+
+    const countdownFunction = setInterval(function () {
+        const now = new Date().getTime();
+        const distance = launchDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerText = days;
+        document.getElementById("hours").innerText = hours;
+        document.getElementById("minutes").innerText = minutes;
+        document.getElementById("seconds").innerText = seconds;
+
+        if (distance < 0) {
+            clearInterval(countdownFunction);
+            document.getElementById("countdown").innerText = "Launched!";
+        }
+    }, 1000);
+</script>
