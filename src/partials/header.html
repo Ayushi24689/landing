@@ -1,89 +1,103 @@
-<!DOCTYPE html>
-<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expensive Header Design</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Expensive Header Design</title>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
 
-<body>
-    <header class="bg-white text-black shadow-lg">
-        <div class="container mx-auto flex flex-wrap p-4 md:p-6 items-center justify-between">
-            <!-- Logo Section -->
-            <a href="../index.html" class="header-logo flex items-center text-gray-900 mb-4 md:mb-0 flex-shrink-0">
-                <span class="text-3xl font-bold">Gadget</span>
-            </a>
+    </head>
 
-            <!-- Center Items -->
-            <nav class="hidden md:flex flex-grow justify-center space-x-8">
-                <a href="#"
-                    class="text-lg font-medium hover:text-indigo-500 transition duration-300 ease-in-out">Catalog</a>
-                <a href="#"
-                    class="text-lg font-medium hover:text-indigo-500 transition duration-300 ease-in-out">Delivery</a>
-                <a href="#"
-                    class="text-lg font-medium hover:text-indigo-500 transition duration-300 ease-in-out">About</a>
-                <a href="#"
-                    class="text-lg font-medium hover:text-indigo-500 transition duration-300 ease-in-out">Contacts</a>
-            </nav>
+    <body>
+        <header class="bg-white text-black shadow-lg">
+            <div class="container mx-auto flex flex-wrap p-4 md:p-6 items-center justify-between">
+                <!-- Logo Section -->
+                <a href="../index.html" class="header-logo flex items-center text-gray-900 mb-4 md:mb-0 flex-shrink-0">
+                    <span class="text-3xl font-bold">Gadget</span>
+                </a>
 
-            <!-- Mobile Menu Button -->
-            <div class="md:hidden flex items-center">
-                <button id="mobile-menu-button" class="text-gray-900 focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16m-7 6h7"></path>
-                    </svg>
-                </button>
-            </div>
+                <!-- Center Items -->
+                <nav class="hidden md:flex flex-grow justify-center space-x-8">
+                    <a href="#"
+                        class="text-lg font-medium hover:text-indigo-500 transition duration-300 ease-in-out">Catalog</a>
+                    <a href="#"
+                        class="text-lg font-medium hover:text-indigo-500 transition duration-300 ease-in-out">Delivery</a>
+                    <a href="#"
+                        class="text-lg font-medium hover:text-indigo-500 transition duration-300 ease-in-out">About</a>
+                    <a href="#"
+                        class="text-lg font-medium hover:text-indigo-500 transition duration-300 ease-in-out">Contacts</a>
+                </nav>
 
-            <!-- End Items -->
-            <div class="flex items-center space-x-7">
-                <div class="relative hidden lg:flex items-center space-x-4"> <!-- Search and icons container -->
-                    <div class="relative">
-                        <input type="text"
-                            class="header-search pl-10 border-2 rounded-lg pr-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                            placeholder="Search...">
-                        <span class="absolute inset-y-0 left-0 flex items-center pl-3">
-                            <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M21 21l-4.35-4.35M11 17a6 6 0 100-12 6 6 0 000 12z"></path>
-                            </svg>
-                        </span>
-                    </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-900 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
 
-                    <a href="#" class="text-gray-900 hover:text-indigo-500 transition duration-300 ease-in-out">
-                        <i class="fas fa-user text-3xl w-10 h-5"></i>
-                    </a>
-                    <a href="../shopping.html"
-                        class="relative text-gray-900 hover:text-indigo-500 transition duration-300 ease-in-out">
-                        <i class="fas fa-shopping-cart text-3xl w-10 h-5"></i>
-                    </a>
+                <!-- End Items -->
+            <div class="flex items-center space-x-7 flex-shrink-0 lg:flex 2xl:flex hidden md:hidden sm:hidden xs:hidden">
+                <div class="relative">
+                    <input type="text" class="header-search pl-10 border-2 rounded-lg pr-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                        placeholder="Search...">
+                    <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+                        <svg class="w-5 h-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-4.35-4.35M11 17a6 6 0 100-12 6 6 0 000 12z"></path>
+                        </svg>
+                    </span>
                 </div>
             </div>
-        </div>
 
-        <!-- Mobile Menu -->
-        <nav id="mobile-menu" class="md:hidden bg-gray-50 border-t border-gray-200 hidden">
-            <a href="#" class="block px-4 py-2 text-lg font-medium hover:bg-gray-100">Catalog</a>
-            <a href="#" class="block px-4 py-2 text-lg font-medium hover:bg-gray-100">Delivery</a>
-            <a href="#" class="block px-4 py-2 text-lg font-medium hover:bg-gray-100">About</a>
-            <a href="#" class="block px-4 py-2 text-lg font-medium hover:bg-gray-100">Contacts</a>
-        </nav>
-    </header>
+                <div class="flex items-center space-x-4"> <!-- Add space-x-4 to create space between icons -->
+                    <a href="#" class="text-gray-900 hover:text-indigo-500 transition duration-300 ease-in-out">
+                        <svg class="w-6 h-6 md:w-7 md:h-7" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 12c-3.313 0-6-2.687-6-6s2.687-6 6-6 6 2.687 6 6-2.687 6-6 6z"></path>
+                            <path d="M12 14c-5.514 0-10 4.486-10 10 0 0.552 0.448 1 1 1h18c0.552 0 1-0.448 1-1 0-5.514-4.486-10-10-10z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a href="../shopping.html" class="relative text-gray-900 hover:text-indigo-500 transition duration-300 ease-in-out">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor"
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 2h12l2 9H8l-1.6-6.4L2 4H1v2h1l3.4 6.8L6 16h13.4l1.6-6.4L20 4h1V2h-2l-2 9H8L6 2z"></path>
+        <circle cx="9" cy="20" r="2"></circle>
+        <circle cx="15" cy="20" r="2"></circle>
+    </svg>
 
-    <script>
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
 
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    </script>
-</body>
 
-</html>
+
+
+                    </a>
+                </div>
+
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <nav id="mobile-menu" class="md:hidden bg-gray-50 border-t border-gray-200 hidden">
+                <a href="#" class="block px-4 py-2 text-lg font-medium hover:bg-gray-100">Catalog</a>
+                <a href="#" class="block px-4 py-2 text-lg font-medium hover:bg-gray-100">Delivery</a>
+                <a href="#" class="block px-4 py-2 text-lg font-medium hover:bg-gray-100">About</a>
+                <a href="#" class="block px-4 py-2 text-lg font-medium hover:bg-gray-100">Contacts</a>
+            </nav>
+        </header>
+
+        <script>
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        </script>
+    </body>
+
+    </html>
